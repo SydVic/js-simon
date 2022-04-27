@@ -27,26 +27,35 @@
 
 // far comparire il prompt dopo i 30 secondi
     // chiedere all'utente di inserire i 5 numeri visualizzati, uno alla volta
-   setTimeout(function(){
-        const userNumbersArray = [];
-    while ( userNumbersArray.length < randomNumberQuantity) {
-        const userNumber = parseInt(prompt("Dimmi uno alla volta i numeri che hai visto.."));
-        console.log("userNumber", userNumber);
-        userNumbersArray.push(userNumber);
-    }
-    console.log("userNumbersArray", userNumbersArray);
-    }, 30100)
-    /*
     const userNumbersArray = [];
+    let userScore = 0;
+    setTimeout(function(){
     while ( userNumbersArray.length < randomNumberQuantity) {
         const userNumber = parseInt(prompt("Dimmi uno alla volta i numeri che hai visto.."));
         console.log("userNumber", userNumber);
         userNumbersArray.push(userNumber);
+        if (randomNumbersArray.includes(userNumber)) {
+            userScore += 1;
+        } 
+        console.log("userScore", userScore);
     }
-    console.log("userNumbersArray", userNumbersArray);
+    //console.log("userNumbersArray", userNumbersArray);
+    //console.log(userNumbersArray[0]);
+    }, 3100)
+    
+
+    /*
+    // confrontare i numeri inseriti con quelli generati casualmente
+    const userScore = 0;
+    for (let i = 0; i < userNumbersArray.length; i++) {
+        if (randomNumbersArray.includes(userNumbersArray[i])) {
+            score += 1;
+        }
+    }
+    console.log("userScore", userScore);
     */
     
-    // confrontare i numeri inseriti con quelli generati casualmente
+
     // comunicare quali e quanti numeri sono stati indovinati
 
 
