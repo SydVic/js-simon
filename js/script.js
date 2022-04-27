@@ -2,12 +2,12 @@
     // funzione per creare 5 numeri random non ripetuti
     const randomNumberQuantity = 5;
     const randomNumberRangeLimit = 100;
-    const randomNumbers = generateUniqueRndNumbers(randomNumberQuantity, randomNumberRangeLimit);
-    console.log("randomNumbers",randomNumbers);
+    const randomNumbersArray = generateUniqueRndNumbers(randomNumberQuantity, randomNumberRangeLimit);
+    console.log("randomNumbersArray",randomNumbersArray);
     // stamparli in html
     const randomNumbersContainer = document.getElementById("random-numbers");
     console.log("randomNumbersContainer", randomNumbersContainer);
-    randomNumbersContainer.innerHTML = randomNumbers;
+    randomNumbersContainer.innerHTML = randomNumbersArray;
 
 // far partire il timer in pagina
     // dopo 30 secondi cancellare i numeri in pagina
@@ -16,17 +16,36 @@
 
     const timer = setInterval(function(){
     count--;
-    if (count <= 0) {
-        clearInterval(timer);
-        timerContainer.innerHTML = "TimeOut!!!";
-        randomNumbersContainer.innerHTML = "";
-    } else {
-        timerContainer.innerHTML = count;
-    }
+        if (count <= 0) {
+            clearInterval(timer);
+            timerContainer.innerHTML = "TimeOut!!!";
+            randomNumbersContainer.innerHTML = "";
+        } else {
+            timerContainer.innerHTML = count;
+        }
     }, 1000);
 
 // far comparire il prompt dopo i 30 secondi
-    // chiedere all'utente di inserire i 5 numeri visualizzati
+    // chiedere all'utente di inserire i 5 numeri visualizzati, uno alla volta
+   setTimeout(function(){
+        const userNumbersArray = [];
+    while ( userNumbersArray.length < randomNumberQuantity) {
+        const userNumber = parseInt(prompt("Dimmi uno alla volta i numeri che hai visto.."));
+        console.log("userNumber", userNumber);
+        userNumbersArray.push(userNumber);
+    }
+    console.log("userNumbersArray", userNumbersArray);
+    }, 30100)
+    /*
+    const userNumbersArray = [];
+    while ( userNumbersArray.length < randomNumberQuantity) {
+        const userNumber = parseInt(prompt("Dimmi uno alla volta i numeri che hai visto.."));
+        console.log("userNumber", userNumber);
+        userNumbersArray.push(userNumber);
+    }
+    console.log("userNumbersArray", userNumbersArray);
+    */
+    
     // confrontare i numeri inseriti con quelli generati casualmente
     // comunicare quali e quanti numeri sono stati indovinati
 
