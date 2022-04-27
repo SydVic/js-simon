@@ -3,7 +3,8 @@
     const randomNumberQuantity = 5;
     const randomNumberRangeLimit = 100;
     const randomNumbersArray = generateUniqueRndNumbers(randomNumberQuantity, randomNumberRangeLimit);
-    console.log("randomNumbersArray",randomNumbersArray);
+    //console.log("randomNumbersArray",randomNumbersArray);
+
     // stamparli in html
     const randomNumbersContainer = document.getElementById("random-numbers");
     console.log("randomNumbersContainer", randomNumbersContainer);
@@ -45,7 +46,7 @@
     }
     let gameResult = document.getElementById("result-container");
     gameResult.innerHTML = `Il tuo punteggio è ${userScore}, hai indovinato questi numeri ${rememberedNumbers}. Quelli mostrati erano ${randomNumbersArray}, quelli inseriti da te ${userNumbersArray}.`;
-    }, 3100)
+    }, 30100)
     
     // comunicare quali e quanti numeri sono stati indovinati
 
