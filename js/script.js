@@ -7,10 +7,23 @@
     // stamparli in html
     const randomNumbersContainer = document.getElementById("random-numbers");
     console.log("randomNumbersContainer", randomNumbersContainer);
-    randomNumbersContainer.innerHTML = `${randomNumbers}`;
+    randomNumbersContainer.innerHTML = randomNumbers;
 
 // far partire il timer in pagina
     // dopo 30 secondi cancellare i numeri in pagina
+    const timerContainer = document.getElementById("timer-container");
+    let count = parseInt(timerContainer.textContent);
+
+    const timer = setInterval(function(){
+    count--;
+    if (count <= 0) {
+        clearInterval(timer);
+        timerContainer.innerHTML = "TimeOut!!!";
+        randomNumbersContainer.innerHTML = "";
+    } else {
+        timerContainer.innerHTML = count;
+    }
+    }, 1000);
 
 // far comparire il prompt dopo i 30 secondi
     // chiedere all'utente di inserire i 5 numeri visualizzati
